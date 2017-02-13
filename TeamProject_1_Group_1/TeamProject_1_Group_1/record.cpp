@@ -13,4 +13,22 @@
 /*-------------------------------------------------------------------------------------------------------*/
 /* FUNCION DEFINITIONS FOR CLASS: RECORD */
 
-// WRITE THE FUNCTIONS HERE
+namespace RECORD {
+
+	Record::Record(int size = 0) {
+
+	}
+
+	int Record::size() {
+		return 0;
+	}
+
+	string Record::at(int index) {
+		return "";
+	}
+
+	void Record::set(int index, string data) {
+
+	}
+
+}

@@ -1,18 +1,15 @@
-﻿Build started 2/13/2017 8:33:38 AM.
-     1>Project "C:\Users\t_lamkin\Documents\Visual Studio 2015\Projects\CSCE315_TeamNTSquared\TeamProject_1_Group_1\TeamProject_1_Group_1\TeamProject_1_Group_1.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D TEAMPROJECT_1_GROUP_1_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt database.cpp record.cpp table.cpp
-         table.cpp
-         record.cpp
-         database.cpp
-         Generating Code...
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\t_lamkin\Documents\Visual Studio 2015\Projects\CSCE315_TeamNTSquared\TeamProject_1_Group_1\Debug\TeamProject_1_Group_1.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\t_lamkin\Documents\Visual Studio 2015\Projects\CSCE315_TeamNTSquared\TeamProject_1_Group_1\Debug\TeamProject_1_Group_1.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\t_lamkin\Documents\Visual Studio 2015\Projects\CSCE315_TeamNTSquared\TeamProject_1_Group_1\Debug\TeamProject_1_Group_1.lib" /MACHINE:X86 /DLL Debug\database.obj
-         Debug\record.obj
-         Debug\table.obj
-         TeamProject_1_Group_1.vcxproj -> C:\Users\t_lamkin\Documents\Visual Studio 2015\Projects\CSCE315_TeamNTSquared\TeamProject_1_Group_1\Debug\TeamProject_1_Group_1.dll
-     1>Done Building Project "C:\Users\t_lamkin\Documents\Visual Studio 2015\Projects\CSCE315_TeamNTSquared\TeamProject_1_Group_1\TeamProject_1_Group_1\TeamProject_1_Group_1.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:02.82
+﻿  table.cpp
+h:\tamu\csce315\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\table.h(26): error C2059: syntax error: '<class-head>'
+h:\tamu\csce315\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\table.h(26): error C2143: syntax error: missing ';' before '{'
+h:\tamu\csce315\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\table.h(26): error C2447: '{': missing function header (old-style formal list?)
+  record.cpp
+h:\tamu\csce315\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\record.cpp(18): error C2572: 'RECORD::Record::Record': redefinition of default argument: parameter 1
+  h:\tamu\csce315\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\record.h(31): note: see declaration of 'RECORD::Record::Record'
+  database.cpp
+h:\tamu\csce315\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\table.h(26): error C2059: syntax error: '<class-head>'
+h:\tamu\csce315\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\table.h(26): error C2143: syntax error: missing ';' before '{'
+h:\tamu\csce315\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\table.h(26): error C2447: '{': missing function header (old-style formal list?)
+h:\tamu\csce315\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.h(27): error C2059: syntax error: '<class-head>'
+h:\tamu\csce315\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.h(27): error C2143: syntax error: missing ';' before '{'
+h:\tamu\csce315\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.h(27): error C2447: '{': missing function header (old-style formal list?)
+  Generating Code...

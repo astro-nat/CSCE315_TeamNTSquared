@@ -15,21 +15,25 @@
 
 #include <vector>
 #include <string>
+
+using namespace std;
 /*-------------------------------------------------------------------------------------------------------*/
 
 /*-------------------------------------------------------------------------------------------------------*/
 /* CLASS DEFINITIONS */
 
-namespace Record
+namespace RECORD {
 
-class Record {
-private:
-	vector<string> container;
-public:
-	Record(int size = 0);
-	int size();
-	string at(int index);
-	void set(int index, string data);
+	class Record {
+	private:
+		vector<string> container;
+	public:
+		Record(int size = 0);
+		int size();
+		string at(int index);
+		void set(int index, string data);
+	};
+
 };
 
 /*-------------------------------------------------------------------------------------------------------*/
