@@ -3,8 +3,8 @@
 
 Team Members:
 
- Natalie Cluck
- Tyler Lamkin
- Tim Tran
+ Natalie Cluck  
+ Tyler Lamkin  
+ Tim Tran  
 
 
