@@ -15,7 +15,7 @@
 
 namespace RECORD {
 
-	Record::Record(int size = 0) {
+	Record::Record(int size) {
 
 	}
 
