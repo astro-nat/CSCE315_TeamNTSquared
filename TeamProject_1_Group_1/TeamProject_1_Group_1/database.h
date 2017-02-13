@@ -22,16 +22,19 @@
 /*-------------------------------------------------------------------------------------------------------*/
 /* CLASS DEFINITIONS */
 
-namespace Database
+namespace DATABASE {
 
-class Database {
-private:
-	vector<Table> data;
-public:
-	Database();
-	void addTable(string name, Table t1);
-	void dropTable(string name);
-	vector<string> listTables();
-	vector<Table> getTables();
-	Table Query(string SELECT, string FROM, string WHERE);
-};
+
+	class Database {
+	private:
+		vector<Table> data;
+	public:
+		Database();
+		void addTable(string name, Table t1);
+		void dropTable(string name);
+		vector<string> listTables();
+		vector<Table> getTables();
+		Table Query(string SELECT, string FROM, string WHERE);
+	};
+
+}

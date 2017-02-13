@@ -21,7 +21,7 @@
 /*-------------------------------------------------------------------------------------------------------*/
 /* CLASS DEFINITIONS */
 
-namespace Table {
+namespace TABLE {
 
 	class Table {
 	private:
