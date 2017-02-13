@@ -1,6 +1,10 @@
-# CSCE315_TeamProjects
+# CSCE315_TeamNTSquared
 Team Members:
 
-Tim Tran
-Tyler Lamkin
-Natalie Cluck
+ Natalie Cluck
+
+ Tyler Lamkin
+
+ Tim Tran
+
+
