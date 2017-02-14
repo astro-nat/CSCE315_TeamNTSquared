@@ -21,19 +21,18 @@
 /*-------------------------------------------------------------------------------------------------------*/
 /* CLASS DEFINITIONS */
 
-namespace TABLE {
 
 	class Table {
 	private:
 		vector<string> attributes;
 		vector<Record> tuples;
 	public:
-		vector<Record>::iterator recordItr;
 		Table(int rows = 0, int columns = 0);
-		template<typedef ... Strings>
-		Table(const Strings& ... args) {
+		template<typename first, typename ... Strings>
+		Table(first arg0, const Strings& ... args) {
 			// DO NOTHING
 		}
+		vector<Record>::iterator recordItr;
 		void addAttribute(string attributeName);
 		void deleteAttribute(string attributeName);
 		void insert(Record newRow);
@@ -46,5 +45,3 @@ namespace TABLE {
 		int max();
 		int min();
 	};
-
-}

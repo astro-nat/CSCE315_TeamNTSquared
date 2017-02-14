@@ -13,9 +13,9 @@
 /*-------------------------------------------------------------------------------------------------------*/
 /* FUNCION DEFINITIONS FOR CLASS: RECORD */
 
-namespace RECORD {
 
-	Record::Record(int size = 0) {
+
+	Record::Record(int size) {
 
 	}
 
@@ -30,5 +30,3 @@ namespace RECORD {
 	void Record::set(int index, string data) {
 
 	}
-
-}

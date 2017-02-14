@@ -22,7 +22,7 @@
 /*-------------------------------------------------------------------------------------------------------*/
 /* CLASS DEFINITIONS */
 
-namespace DATABASE {
+
 
 
 	class Database {
@@ -37,4 +37,3 @@ namespace DATABASE {
 		Table Query(string SELECT, string FROM, string WHERE);
 	};
 
-}
