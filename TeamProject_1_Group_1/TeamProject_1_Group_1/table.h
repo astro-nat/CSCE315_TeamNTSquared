@@ -21,21 +21,22 @@
 /*-------------------------------------------------------------------------------------------------------*/
 /* CLASS DEFINITIONS */
 
+namespace TABLE {
 
 	class Table {
 	private:
 		vector<string> attributes;
-		vector<Record> tuples;
+		vector<RECORD::Record> tuples;
 	public:
 		Table(int rows = 0, int columns = 0);
 		template<typename first, typename ... Strings>
 		Table(first arg0, const Strings& ... args) {
 			// DO NOTHING
 		}
-		vector<Record>::iterator recordItr;
+		vector<RECORD::Record>::iterator recordItr;
 		void addAttribute(string attributeName);
 		void deleteAttribute(string attributeName);
-		void insert(Record newRow);
+		void insert(RECORD::Record newRow);
 		vector<string> getAttributes();
 		int size();
 		void specifyKey(string attributeKey);
@@ -45,3 +46,4 @@
 		int max();
 		int min();
 	};
+}

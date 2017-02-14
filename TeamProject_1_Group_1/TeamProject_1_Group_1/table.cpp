@@ -10,7 +10,7 @@
 #include <string>
 #include "record.h"
 #include "table.h"
-
+using namespace TABLE;
 /*-------------------------------------------------------------------------------------------------------*/
 
 /*-------------------------------------------------------------------------------------------------------*/
@@ -28,7 +28,7 @@
 	void Table::deleteAttribute(string attributeName) {
 
 	}
-	void Table::insert(Record newRow) {
+	void Table::insert(RECORD::Record newRow) {
 
 	}
 	vector<string> Table::getAttributes() {

@@ -22,7 +22,7 @@ using namespace std;
 /*-------------------------------------------------------------------------------------------------------*/
 /* CLASS DEFINITIONS */
 
-
+namespace RECORD {
 
 	class Record {
 	private:
@@ -33,6 +33,6 @@ using namespace std;
 		string at(int index);
 		void set(int index, string data);
 	};
-
+}
 
 /*-------------------------------------------------------------------------------------------------------*/
