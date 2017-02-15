@@ -42,8 +42,8 @@ namespace TABLE {
 		void specifyKey(string attributeKey);
 		void crossJoin(Table t1, Table t2);
 		void naturalJoin(Table t1, Table t2);
-		int count();
-		int max();
-		int min();
+		int count(string attributeName);
+		int max(string attributeName);
+		int min(string attributeName);
 	};
 }
