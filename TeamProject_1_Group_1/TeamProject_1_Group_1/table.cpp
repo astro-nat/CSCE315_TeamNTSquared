@@ -42,11 +42,13 @@ using namespace TABLE;
 
 	}
 
-	void Table::crossJoin(Table t1, Table t2) {
-
+	Table Table::crossJoin(Table t1, Table t2) {
+		Table null;
+		return null;
 	}
-	void Table::naturalJoin(Table t1, Table t2) {
-
+	Table Table::naturalJoin(Table t1, Table t2) {
+		Table null;
+		return null;
 	}
 	int Table::count(string attributeName) {
 		return 0;

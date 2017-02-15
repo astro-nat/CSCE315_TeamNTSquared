@@ -40,8 +40,8 @@ namespace TABLE {
 		vector<string> getAttributes();
 		int size();
 		void specifyKey(string attributeKey);
-		void crossJoin(Table t1, Table t2);
-		void naturalJoin(Table t1, Table t2);
+		Table crossJoin(Table t1, Table t2);
+		Table naturalJoin(Table t1, Table t2);
 		int count(string attributeName);
 		int max(string attributeName);
 		int min(string attributeName);
