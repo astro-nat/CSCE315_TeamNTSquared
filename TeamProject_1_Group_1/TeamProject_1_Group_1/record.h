@@ -4,9 +4,9 @@
 /* DEFINES */
 
 #ifndef RECORD_H
-#define RECORD_declspec(dllexport)
+#define RECORD_API __declspec(dllexport)
 #else 
-#define RECORD_declspec(dllimport)
+#define RECORD_API __declspec(dllimport)
 #endif 
 /*-------------------------------------------------------------------------------------------------------*/
 
@@ -28,10 +28,10 @@ namespace RECORD {
 	private:
 		vector<string> container;
 	public:
-		Record(int size = 0);
-		int size();
-		string at(int index);
-		void set(int index, string data);
+		RECORD_API Record(int size = 0);
+		RECORD_API int size();
+		RECORD_API string at(int index);
+		RECORD_API void set(int index, string data);
 	};
 }
 

@@ -4,9 +4,9 @@
 /* DEFINES */
 
 #ifndef TABLE_H
-#define TABLE_declspec(dllexport)
+#define TABLE_API __declspec(dllexport)
 #else 
-#define TABLE_declspec(dllimport)
+#define TABLE_API __declspec(dllimport)
 #endif 
 /*-------------------------------------------------------------------------------------------------------*/
 
@@ -28,22 +28,22 @@ namespace TABLE {
 		vector<string> attributes;
 		vector<RECORD::Record> tuples;
 	public:
-		Table(int rows = 0, int columns = 0);
+		TABLE_API Table(int rows = 0, int columns = 0);
 		template<typename first, typename ... Strings>
-		Table(first arg0, const Strings& ... args) {
+		TABLE_API Table(first arg0, const Strings& ... args) {
 			// DO NOTHING
 		}
 		vector<RECORD::Record>::iterator recordItr;
-		void addAttribute(string attributeName);
-		void deleteAttribute(string attributeName);
-		void insert(RECORD::Record newRow);
-		vector<string> getAttributes();
-		int size();
-		void specifyKey(string attributeKey);
-		Table crossJoin(Table t1, Table t2);
-		Table naturalJoin(Table t1, Table t2);
-		int count(string attributeName);
-		int max(string attributeName);
-		int min(string attributeName);
+		TABLE_API void addAttribute(string attributeName);
+		TABLE_API void deleteAttribute(string attributeName);
+		TABLE_API void insert(RECORD::Record newRow);
+		TABLE_API vector<string> getAttributes();
+		TABLE_API int size();
+		TABLE_API void specifyKey(string attributeKey);
+		TABLE_API Table crossJoin(Table t1, Table t2);
+		TABLE_API Table naturalJoin(Table t1, Table t2);
+		TABLE_API int count(string attributeName);
+		TABLE_API int max(string attributeName);
+		TABLE_API int min(string attributeName);
 	};
 }

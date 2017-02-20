@@ -4,9 +4,9 @@
 /* DEFINES */
 
 #ifndef DATABASE_H
-#define DATABASE_declspec(dllexport)
+#define DATABASE_API __declspec(dllexport)
 #else 
-#define DATABASE_declspec(dllimport)
+#define DATABASE_API __declspec(dllimport)
 #endif 
 /*-------------------------------------------------------------------------------------------------------*/
 
@@ -29,12 +29,12 @@ namespace DATABASE {
 	private:
 		vector<TABLE::Table> data;
 	public:
-		Database();
-		void addTable(string name, TABLE::Table t1);
-		void dropTable(string name);
-		vector<string> listTables();
-		vector<TABLE::Table> getTables();
-		TABLE::Table Query(string SELECT, string FROM, string WHERE);
+		DATABASE_API Database();
+		DATABASE_API void addTable(string name, TABLE::Table t1);
+		DATABASE_API void dropTable(string name);
+		DATABASE_API vector<string> listTables();
+		DATABASE_API vector<TABLE::Table> getTables();
+		DATABASE_API TABLE::Table Query(string SELECT, string FROM, string WHERE);
 	};
 
 }
