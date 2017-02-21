@@ -17,6 +17,8 @@ int main() {
 	
 
 	try {
+		
+		cout << "hello matey" << endl;
 		// Begin testing Record
 
 		// Begin testing Table
