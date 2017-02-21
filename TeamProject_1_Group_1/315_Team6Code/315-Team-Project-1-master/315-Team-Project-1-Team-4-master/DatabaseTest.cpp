@@ -9,9 +9,17 @@ using namespace std;
 string TEST = "TEST";
 
 int main() {
+	
+	/*
+	First Error we noticed. Your Database class has no data members
+	and the entire class is private. Therefore we cannot create 
+	any Database data members.
+	*/
 	Database db();
+	
+	
 	Table t1;
-
+	
 	/*
 	First Error we noticed. Your Record class has no data members
 	and the entire class is private. Therefore we cannot create 
@@ -22,7 +30,8 @@ int main() {
 
 	try {
 
-		// Begin testing Record
+		///* BEGIN TESTING RECORD *///
+		
 		// Test Record.size();
 		if (r1.size() != 0) {
 			throw string("Record size error.\n");
@@ -59,14 +68,56 @@ int main() {
 		if (r3[3] != TEST) {
 			throw string("Record Set/access failed.\n");
 		}
-		// Begin testing Table
+		
+		
+		///* BEGIN TESTING TABLE *///
 
-		// Begin testing Database
+		
+		///* BEGIN TESTING DATABASE *///
+		
+		// Should Be No Tables in Database upon Initialization
+		if(!db.tables.empty()) {
+			throw string("Database size error.\n");
+		}
+		
+		// Test add_table
+		db.add_table("Table1", t1);
+		if(db.tables.size() != 1) {
+			throw string("Add failed.\n");
+		}
+		
+		// Test list_table_names
+		if(db.list_table_names()[0] != "Table1") {
+			throw string("List table names failed.\n");
+		}
+		
+		// Test get_tables
+		if(t1 != db.get_tables()[0]) {
+			throw string("Get tables failed.\n");
+		}
+		
+		// Test query with existing table with existing record(s)
+		Table result = db.query("*", "Table1",  "TEST");
+	
+		// Test query with existing table with nonexistent record(s)
+		db.query("*", "Table1", "DUMMY_COLUMN = NOTFOUND");
+	
+		// Test query with nonexisting table
+		db.query("*", "FakeTable", "TEST");
+		
+		// Test drop
+		db.drop("Table1");
+		if(db.tables.size() != 0) {
+			throw string("Table drop failed.\n");
+		}
+		
 	}
 	catch (string e) {
 		cout << e;
 	}
 
+	
+	
 	return 0;
 
 }
