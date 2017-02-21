@@ -1,49 +1,75 @@
 #pragma once
 
-/*-------------------------------------------------------------------------------------------------------*/
-/* DEFINES */
+#pragma once
 
-#ifndef TABLE_H
-#define TABLE_declspec(dllexport)
-#else 
-#define TABLE_declspec(dllimport)
-#endif 
-/*-------------------------------------------------------------------------------------------------------*/
-
-/*-------------------------------------------------------------------------------------------------------*/
-/* INCLUDES */
-
-#include <vector>
 #include <string>
+
+#include "Record.h"
+#include <vector>
 #include "record.h"
-/*-------------------------------------------------------------------------------------------------------*/
 
-/*-------------------------------------------------------------------------------------------------------*/
-/* CLASS DEFINITIONS */
 
-namespace TABLE {
+class __declspec(dllexport) Table
+{
 
-	class Table {
-	private:
-		vector<string> attributes;
-		vector<RECORD::Record> tuples;
-	public:
-		Table(int rows = 0, int columns = 0);
-		template<typename first, typename ... Strings>
-		Table(first arg0, const Strings& ... args) {
-			// DO NOTHING
-		}
-		vector<RECORD::Record>::iterator recordItr;
-		void addAttribute(string attributeName);
-		void deleteAttribute(string attributeName);
-		void insert(RECORD::Record newRow);
-		vector<string> getAttributes();
-		int size();
-		void specifyKey(string attributeKey);
-		Table crossJoin(Table t1, Table t2);
-		Table naturalJoin(Table t1, Table t2);
-		int count(string attributeName);
-		int max(string attributeName);
-		int min(string attributeName);
+private:
+
+	std::vector<Record> records_;
+
+public:
+
+	class iterator : std::vector<Record>::iterator
+
+	{
+
 	};
-}
+
+
+
+
+
+	Table() : records_()
+	{
+
+	}
+
+
+
+	Table(std::string attrs[]);
+
+
+
+	void add(std::string attr);
+
+	void del(std::string attr);
+
+	void insert(Record r);
+
+	std::string* get_attrs();
+
+	int size();
+
+
+
+	Record* operator[](size_t index);
+
+	const Record* operator[](size_t index) const;
+
+
+
+	std::vector<Record>::iterator begin() { return records_.begin(); }
+
+	std::vector<Record>::iterator end() { return records_.end(); }
+
+	void cross_join(Table other_table);
+
+	void natural_join(Table other_table);
+
+	int count_attr(std::string attr);
+
+	int min_attr(std::string attr);
+
+	int max_attr(std::string attr);
+
+};
+
