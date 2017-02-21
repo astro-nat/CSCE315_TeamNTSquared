@@ -1,25 +1,40 @@
-// Team_Project_1.cpp : Defines the exported functions for the DLL application.
+#pragma once
 
+/*-------------------------------------------------------------------------------------------------------*/
+/* DEFINES */
 
-// Database Methods
+#ifndef DATABASE_H
+#define DATABASE_API __declspec(dllexport)
+#else 
+#define DATABASE_API __declspec(dllimport)
+#endif 
+/*-------------------------------------------------------------------------------------------------------*/
 
+/*-------------------------------------------------------------------------------------------------------*/
+/* INCLUDES */
 
-#include <string>
 #include <vector>
+#include <string>
+#include "record.h"
 #include "table.h"
+/*-------------------------------------------------------------------------------------------------------*/
 
-class __declspec(dllexport) Database
-{
-	Database ();
+/*-------------------------------------------------------------------------------------------------------*/
+/* CLASS DEFINITIONS */
 
-	void add_table(std::string name, Table t);
 
-	void drop(std::string name);
+namespace DATABASE {
 
-	std::vector<std::string> list_table_names();
+	class Database {
+	private:
+		vector<TABLE::Table> data;
+	public:
+		DATABASE_API Database();
+		DATABASE_API void addTable(string name, TABLE::Table t1);
+		DATABASE_API void dropTable(string name);
+		DATABASE_API vector<string> listTables();
+		DATABASE_API vector<TABLE::Table> getTables();
+		DATABASE_API TABLE::Table Query(string SELECT, string FROM, string WHERE);
+	};
 
-	std::vector<Table> get_tables();
-
-	Table query(std::string select, std::string from, std::string where);
-
-};
+}

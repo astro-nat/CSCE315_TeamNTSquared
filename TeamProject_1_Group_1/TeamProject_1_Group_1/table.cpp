@@ -1,61 +1,62 @@
-#include "stdafx.h"
+/*-------------------------------------------------------------------------------------------------------*/
+/* DEFINES */
+/*-------------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------------------------*/
+/* INCLUDES */
+
+#include <iostream>
+#include <vector>
+#include <string>
+#include "record.h"
 #include "table.h"
+using namespace TABLE;
+/*-------------------------------------------------------------------------------------------------------*/
 
-Table::Table(std::string attrs[])
-{
-}
+/*-------------------------------------------------------------------------------------------------------*/
+/* FUNCION DEFINITIONS FOR CLASS: TABLE */
 
-void Table::add(std::string attr)
-{
-}
 
-void Table::del(std::string attr)
-{
-}
+	
+	Table::Table(int rows, int columns) {
+		std::cout << "Table constructor." << endl;
+	}
 
-void Table::insert(Record r)
-{
-}
+	void Table::addAttribute(string attributeName) {
 
-std::string * Table::get_attrs()
-{
-	return nullptr;
-}
+	}
+	void Table::deleteAttribute(string attributeName) {
 
-int Table::size()
-{
-	return 0;
-}
+	}
+	void Table::insert(RECORD::Record newRow) {
 
-Record * Table::operator[](size_t index)
-{
-	return nullptr;
-}
+	}
+	vector<string> Table::getAttributes() {
+		vector<string> null;
+		return null;
+	}
+	int Table::size() {
+		return 0;
+	}
+	void Table::specifyKey(string attributeKey) {
 
-const Record * Table::operator[](size_t index) const
-{
-	return nullptr;
-}
+	}
 
-void Table::cross_join(Table other_table)
-{
-}
+	Table Table::crossJoin(Table t1, Table t2) {
+		Table null;
+		return null;
+	}
+	Table Table::naturalJoin(Table t1, Table t2) {
+		Table null;
+		return null;
+	}
+	int Table::count(string attributeName) {
+		return 0;
+	}
+	int Table::max(string attributeNam) {
+		return 0;
+	}
+	int Table::min(string attributeNam) {
+		return 0;
+	}
 
-void Table::natural_join(Table other_table)
-{
-}
-
-int Table::count_attr(std::string attr)
-{
-	return 0;
-}
-
-int Table::min_attr(std::string attr)
-{
-	return 0;
-}
-
-int Table::max_attr(std::string attr)
-{
-	return 0;
-}

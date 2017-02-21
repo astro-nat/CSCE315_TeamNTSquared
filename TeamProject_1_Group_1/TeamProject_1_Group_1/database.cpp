@@ -1,25 +1,42 @@
-#include "stdafx.h"
+/*-------------------------------------------------------------------------------------------------------*/
+/* DEFINES */
+/*-------------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------------------------*/
+/* INCLUDES */
+
+#include <vector>
+#include <string>
+#include "record.h"
+#include "table.h"
 #include "database.h"
+using namespace DATABASE;
+/*-------------------------------------------------------------------------------------------------------*/
 
-void Database::add_table(std::string name, Table t)
-{
-}
+/*-------------------------------------------------------------------------------------------------------*/
+/* FUNCION DEFINITIONS FOR CLASS: DATABASE */
 
-void Database::drop(std::string name)
-{
-}
 
-std::vector<std::string> Database::list_table_names()
-{
-	return std::vector<std::string>();
-}
 
-std::vector<Table> Database::get_tables()
-{
-	return std::vector<Table>();
-}
 
-Table Database::query(std::string select, std::string from, std::string where)
-{
-	return Table();
-}
+	Database::Database() {
+
+	}
+	void Database::addTable(string name, TABLE::Table t1) {
+
+	}
+	void Database::dropTable(string name) {
+
+	}
+	vector<string> Database::listTables() {
+		vector<string> null;
+		return null;
+	}
+	vector<TABLE::Table> Database::getTables() {
+		vector<TABLE::Table> null;
+		return null;
+	}
+	TABLE::Table Database::Query(string SELECT, string FROM, string WHERE) {
+		TABLE::Table null;
+		return null;
+	}
