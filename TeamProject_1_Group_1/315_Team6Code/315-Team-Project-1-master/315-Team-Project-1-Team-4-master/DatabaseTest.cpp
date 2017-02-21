@@ -71,7 +71,67 @@ int main() {
 		
 		
 		///* BEGIN TESTING TABLE *///
+		//Testing Constructor:
+		Table t1;
+		Table t2({ "CSCE", "315", "Programming" }, 3);
+		Table t3({ "CSCE", "315", "Programming" }, 5);
 
+		//Adding attribute to empty table
+		t1.add("Studio");
+		t2.add("Studio");
+		t3.add("Studio");
+
+		//testing delete should throw error on empty table because there are no attributes
+		t1.del("CSCE");
+		t2.del("CSCE");
+		t3.del("CSCE");
+
+		t1.insert(r1);
+		t2.insert(r1);
+		t2.insert(r2);
+
+		//testing get_attributes on an empty table. should throw error because no attributes
+		//THIS FUNCTION WAS IN YOUR API BUT NOT IN TABLE.H. NEED TO ADD.
+		v1 = t1.get_attributes();
+		if (v1.size() == 0)
+			throw string("Empty Table! No attributes yet");
+
+		v1 = t2.get_attributes();
+		v1 = t3.get_attributes();
+
+
+		//testing size function 
+		testSize = t1.size();
+		if (testSize != 0)
+			throw string("Table size error!");
+		testSize = t2.size();
+		if (testSize != 3)
+			throw string("Table size error!");
+		testSize = t3.size();
+		if (testSize != 5)
+			throw string("Table size error!");
+
+
+		//testing operator[] access
+		//MIGHT NEED TO CHANGE TO TABLE* OPERATOR[] INSTEAD OF RECORD* OPERATOR[];
+
+		//NEED TO DECLARE 'RENAME' FUNCTION IN HEADER. 
+
+		t2.del("Programming");
+		t2.del("315");
+
+		t2.rename("Studio", "Piazza");
+
+		v1 = t2.get_attributes();
+
+		//CROSS_JOIN, NATURAL_JOIN SHOULD RETURN A TABLE INSTEAD OF A VOID. REMEMBER TO CHANGE IN HEADER
+
+		t2.cross_join(t3);
+		testSize = t2.size();
+		if (testSize != 15)
+			throw string("Improper cross join!");
+
+		t1.natural_join(t2);
 		
 		///* BEGIN TESTING DATABASE *///
 		
