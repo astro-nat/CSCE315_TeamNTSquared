@@ -9,18 +9,24 @@ int main() {
 	Table t1;
 
 	/*
-	First Error we noticed. Your Record class has no data members, no getters/setters for each of the elements,
-	and the entire class is private. Therefore we cannot create any Record data members.
+	First Error we noticed. Your Record class has no data members
+	and the entire class is private. Therefore we cannot create 
+	any Record data members.
 	*/
 	Record r1(0), r2(2), r3(4);
 	
 
+	try {
+		// Begin testing Record
 
-	// Begin testing Record
+		// Begin testing Table
 
-	// Begin testing Table
+		// Begin testing Database
+	}
+	catch (...) {
 
-	// Begin testing Database
+	}
 
+	return 0;
 
 }
