@@ -27,13 +27,14 @@ namespace TABLE {
 	private:
 		vector<string> attributes;
 		vector<RECORD::Record> tuples;
+		vector<RECORD::Record>::iterator recordItr;
 	public:
 		TABLE_API Table(int rows = 0, int columns = 0);
 		template<typename first, typename ... Strings>
 		TABLE_API Table(first arg0, const Strings& ... args) {
 			// DO NOTHING
 		}
-		vector<RECORD::Record>::iterator recordItr;
+
 		TABLE_API void addAttribute(string attributeName);
 		TABLE_API void deleteAttribute(string attributeName);
 		TABLE_API void insert(RECORD::Record newRow);
