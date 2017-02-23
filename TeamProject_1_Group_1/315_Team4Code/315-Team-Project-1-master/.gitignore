@@ -8,7 +8,10 @@
 *.sln.docstates
 *.sdf
 *.icloud
+<<<<<<< HEAD
 *.DS_Store
+=======
+>>>>>>> checkpoint2
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
