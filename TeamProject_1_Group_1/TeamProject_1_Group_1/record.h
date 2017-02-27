@@ -32,6 +32,7 @@ namespace RECORD {
 		RECORD_API int size();
 		RECORD_API string at(int index);
 		RECORD_API void set(int index, string data);
+		RECORD_API void erase(int index);
 	};
 }
 

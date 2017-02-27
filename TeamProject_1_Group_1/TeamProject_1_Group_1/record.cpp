@@ -31,3 +31,7 @@ using namespace RECORD;
 	void Record::set(int index, string data) {
 
 	}
+
+	void Record::erase(int index) {
+		container.erase(container.begin() + index);
+	}
