@@ -24,12 +24,21 @@ using namespace RECORD;
 		return container.size();
 	}
 
+
 	string Record::at(int index) {
-		return container[index];
+		if (index < container.size()) {
+			return container[index];
+		}
+		else return "";
 	}
 
 	void Record::set(int index, string data) {
-		container[index] = data;
+		if (index >= container.size()) {
+			container.push_back(data);
+		}
+		else {
+			container[index] = data;
+		}
 	}
 
 	void Record::erase(int index) {

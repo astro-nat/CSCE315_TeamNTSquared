@@ -97,8 +97,37 @@ using namespace TABLE;
 	}
 
 	Table Table::crossJoin(Table t1, Table t2) {
-		Table null(0,0);
-		return null;
+
+		int tableSize = (t1.getAttributes().size() + t2.getAttributes().size());
+		Table joinedTable(0.0, tableSize);
+		
+		for (int i = 0; i < t1.getAttributes().size(); i++) {
+			joinedTable.addAttribute(t1.getAttributes()[i]);
+		}
+		for (int j = 0; j < t2.getAttributes().size(); j++) {
+			joinedTable.addAttribute(t2.getAttributes()[j]);
+		}
+
+		for (int i = 0; i < t1.size(); i++) {
+			for (int j = 0; j < t2.size(); j++) {
+
+				for (int k = 0; k < tableSize; k++) {
+					RECORD::Record newRecord(tableSize);
+					for (int m = 0; m < t1.size(); m++) {
+						newRecord.set(k, t1.tuples[i].at(m));
+						for (int n = 0; n < t2.size(); n++) {
+							newRecord.set(k, t2.tuples[i].at(n));
+						}
+					}
+
+					joinedTable.tuples.push_back(newRecord);
+				}
+			}
+		}
+		
+
+		return joinedTable;
+
 	}
 
 	Table Table::naturalJoin(Table t1, Table t2) {

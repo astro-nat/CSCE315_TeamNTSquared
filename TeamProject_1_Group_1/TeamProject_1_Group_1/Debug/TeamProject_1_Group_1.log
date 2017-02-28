@@ -1,4 +1,6 @@
 ﻿  record.cpp
+h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\record.cpp(32): warning C4018: '<': signed/unsigned mismatch
+h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\record.cpp(39): warning C4018: '>=': signed/unsigned mismatch
   database.cpp
 h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(22): warning C4018: '<': signed/unsigned mismatch
 h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(24): error C3867: 'TABLE::Table::returnKey': non-standard syntax; use '&' to create a pointer to member
