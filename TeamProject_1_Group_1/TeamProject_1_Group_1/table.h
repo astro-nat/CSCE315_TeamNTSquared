@@ -30,7 +30,7 @@ namespace TABLE {
 		vector<RECORD::Record> tuples;
 		vector<RECORD::Record>::iterator recordItr;
 	public:
-		TABLE_API Table();
+		//TABLE_API Table();
 		TABLE_API Table(int rows = 0, int columns = 0);
 		TABLE_API Table(char* arg, ...);
 		

@@ -59,28 +59,51 @@ vector<TABLE::Table> Database::getTables() {
 	return data;
 }
 
-TABLE::Table Database::Query(vector<string> SELECT, string FROM, string WHERE) {
-	TABLE::Table newTable;
 
+// HELPER FUNCTION FOR Query
+vector<string> separateAtApostrophe(string input) {
+	vector<string> output;
+	int index1;
+	//int index2;
+	int size;
+	bool ready = false;
+	for (int i = 0; i < input.size(); i++) {
+		if (input.at(i) == '\'' && ready == false) {
+			index1 = i + 1;
+			ready = true;
+		}
+		else if (input.at(i) == '\'' && ready == true) {
+			size = i - index1;
+			output.push_back(input.substr(index1, size));
+			ready = false;
+		}
+		else {
+			// KEEP GOING
+		}
+	}
+	return output;
+}
+
+// SELECT input format: "'FirstArg' 'Second ARG' [...] 'Last arg'" 
+// Comma deliminated
+TABLE::Table Database::Query(string SELECT, string FROM, string WHERE){
+	TABLE::Table newTable;
+	vector<string> selectArgs;
 	for (int i = 0; i < SELECT.size(); i++)
 	{
 
-		if (SELECT.size() == 1 && SELECT[i] == "*")
+		if (SELECT.size() == 1 && SELECT == "*")
 		{
 			//add all attribute names to table
 		}
-		else if (SELECT.size() == 1)
-		{
-			//add attribute SELECT[i] to newTable
-		}
 		else
 		{
-			SELECT.push_back(SELECT[i])
+			selectArgs = separateAtApostrophe(SELECT);
 		}
 
-
-
-
-
-		return newTable;
 	}
+
+
+
+	return newTable;
+}

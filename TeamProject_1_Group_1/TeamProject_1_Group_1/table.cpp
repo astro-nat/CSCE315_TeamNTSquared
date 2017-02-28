@@ -17,15 +17,22 @@ using namespace TABLE;
 /*-------------------------------------------------------------------------------------------------------*/
 /* FUNCION DEFINITIONS FOR CLASS: TABLE */
 
-
+/*
 	Table::Table() {
-
+		tuples.clear();
+		attributes.clear();
+		key = "";
 	}
+*/
 	Table::Table(int rows, int columns) {
+		attributes.clear();
+		tuples.clear();
 		RECORD::Record null(columns);
 		for (int i = 0; i < rows; i++) {
 			tuples.push_back(null);
 		}
+		key = "";
+		attributes.clear();
 	}
 
 	Table::Table(char* arg, ...) {
@@ -40,6 +47,7 @@ using namespace TABLE;
 			attributes.push_back(attribute);
 		}
 		va_end(args);
+		key = "";
 	}
 
 	void Table::addAttribute(string attributeName) {
