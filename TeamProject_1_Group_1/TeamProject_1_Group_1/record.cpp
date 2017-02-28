@@ -17,19 +17,19 @@ using namespace RECORD;
 
 
 	Record::Record(int size) {
-
+		container.resize(size);
 	}
 
 	int Record::size() {
-		return 0;
+		return container.size();
 	}
 
 	string Record::at(int index) {
-		return "";
+		return container[index];
 	}
 
 	void Record::set(int index, string data) {
-
+		container[index] = data;
 	}
 
 	void Record::erase(int index) {
