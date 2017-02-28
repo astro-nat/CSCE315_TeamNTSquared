@@ -32,8 +32,9 @@ namespace TABLE {
 	public:
 		//TABLE_API Table();
 		TABLE_API Table(int rows = 0, int columns = 0);
+
 		TABLE_API Table(char* arg, ...);
-		
+
 		TABLE_API void addAttribute(string attributeName);
 		TABLE_API void deleteAttribute(string attributeName);
 		TABLE_API void insert(RECORD::Record newRow);
