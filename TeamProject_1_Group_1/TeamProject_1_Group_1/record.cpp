@@ -15,7 +15,6 @@ using namespace RECORD;
 /* FUNCION DEFINITIONS FOR CLASS: RECORD */
 
 
-
 	Record::Record(int size) {
 		container.resize(size);
 	}
@@ -44,3 +43,4 @@ using namespace RECORD;
 	void Record::erase(int index) {
 		container.erase(container.begin() + index);
 	}
+

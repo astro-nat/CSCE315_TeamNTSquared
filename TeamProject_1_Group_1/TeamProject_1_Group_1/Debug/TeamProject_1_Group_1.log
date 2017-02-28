@@ -1,9 +1,0 @@
-﻿  database.cpp
-h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(23): warning C4018: '<': signed/unsigned mismatch
-h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(54): warning C4018: '<': signed/unsigned mismatch
-h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(71): warning C4018: '<': signed/unsigned mismatch
-h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(111): warning C4018: '<': signed/unsigned mismatch
-h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(136): warning C4018: '<': signed/unsigned mismatch
-h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(151): warning C4018: '<': signed/unsigned mismatch
-     Creating library H:\TAMU\CSCE315\CSCE315_TeamProjects\CSCE315_TeamNTSquared\TeamProject_1_Group_1\Debug\TeamProject_1_Group_1.lib and object H:\TAMU\CSCE315\CSCE315_TeamProjects\CSCE315_TeamNTSquared\TeamProject_1_Group_1\Debug\TeamProject_1_Group_1.exp
-  TeamProject_1_Group_1.vcxproj -> H:\TAMU\CSCE315\CSCE315_TeamProjects\CSCE315_TeamNTSquared\TeamProject_1_Group_1\Debug\TeamProject_1_Group_1.dll
