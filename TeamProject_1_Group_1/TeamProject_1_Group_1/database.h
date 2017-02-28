@@ -34,7 +34,8 @@ namespace DATABASE {
 		DATABASE_API void dropTable(string name);
 		DATABASE_API vector<string> listTables();
 		DATABASE_API vector<TABLE::Table> getTables();
-		DATABASE_API TABLE::Table Query(string SELECT, string FROM, string WHERE);
+		DATABASE_API TABLE::Table Query(string SELECT, string FROM, string WHERE); //changed to vector select
+		DATABASE_API int indexAtName(string name); //added extra function for database
 	};
 
 }
