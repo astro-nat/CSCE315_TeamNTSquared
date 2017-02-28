@@ -1,20 +1,9 @@
-﻿  record.cpp
-h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\record.cpp(32): warning C4018: '<': signed/unsigned mismatch
-h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\record.cpp(39): warning C4018: '>=': signed/unsigned mismatch
-  database.cpp
-h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(22): warning C4018: '<': signed/unsigned mismatch
-h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(24): error C3867: 'TABLE::Table::returnKey': non-standard syntax; use '&' to create a pointer to member
-h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(24): error C2678: binary '==': no operator found which takes a left-hand operand of type 'overloaded-function' (or there is no acceptable conversion)
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\system_error(379): note: could be 'bool std::operator ==(const std::error_condition &,const std::error_condition &) noexcept'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\system_error(371): note: or       'bool std::operator ==(const std::error_condition &,const std::error_code &) noexcept'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\system_error(363): note: or       'bool std::operator ==(const std::error_code &,const std::error_condition &) noexcept'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\system_error(355): note: or       'bool std::operator ==(const std::error_code &,const std::error_code &) noexcept'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\exception(338): note: or       'bool std::operator ==(const std::exception_ptr &,std::nullptr_t) throw()'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\exception(333): note: or       'bool std::operator ==(std::nullptr_t,const std::exception_ptr &) throw()'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\exception(328): note: or       'bool std::operator ==(const std::exception_ptr &,const std::exception_ptr &) throw()'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2425): note: or       'bool std::operator ==<char,std::char_traits<char>,std::allocator<char>>(const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &,const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &)'
-  h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(24): note: while trying to match the argument list '(overloaded-function, std::string)'
-h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(53): warning C4018: '<': signed/unsigned mismatch
-h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(70): warning C4018: '<': signed/unsigned mismatch
-h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(92): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
+﻿  database.cpp
+h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(23): warning C4018: '<': signed/unsigned mismatch
+h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(54): warning C4018: '<': signed/unsigned mismatch
+h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(71): warning C4018: '<': signed/unsigned mismatch
+h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(111): warning C4018: '<': signed/unsigned mismatch
+h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(136): warning C4018: '<': signed/unsigned mismatch
+h:\tamu\csce315\csce315_teamprojects\csce315_teamntsquared\teamproject_1_group_1\teamproject_1_group_1\database.cpp(151): warning C4018: '<': signed/unsigned mismatch
+     Creating library H:\TAMU\CSCE315\CSCE315_TeamProjects\CSCE315_TeamNTSquared\TeamProject_1_Group_1\Debug\TeamProject_1_Group_1.lib and object H:\TAMU\CSCE315\CSCE315_TeamProjects\CSCE315_TeamNTSquared\TeamProject_1_Group_1\Debug\TeamProject_1_Group_1.exp
+  TeamProject_1_Group_1.vcxproj -> H:\TAMU\CSCE315\CSCE315_TeamProjects\CSCE315_TeamNTSquared\TeamProject_1_Group_1\Debug\TeamProject_1_Group_1.dll

@@ -22,7 +22,7 @@ int Database::indexAtName(string name)
 	int index = 0;
 	for (int i = 0; i < data.size(); i++)
 	{
-		if (data.at(i).returnKey == name)
+		if (data.at(i).returnKey() == name)
 		{
 			return index;
 		}
