@@ -28,7 +28,7 @@ namespace TABLE {
 		string key;
 		vector<string> attributes;
 		vector<RECORD::Record> tuples;
-		vector<RECORD::Record>::iterator recordItr;
+		
 	public:
 		//TABLE_API Table();
 		TABLE_API Table(int rows = 0, int columns = 0);
@@ -46,5 +46,13 @@ namespace TABLE {
 		TABLE_API int count(string attributeName);
 		TABLE_API int max(string attributeName);
 		TABLE_API int min(string attributeName);
+
+		typedef vector<RECORD::Record>::iterator recordItr;
+		TABLE_API recordItr begin() { return tuples.begin(); }
+		TABLE_API recordItr end() { return tuples.end(); }
+
+		
+		TABLE_API vector<string>::iterator attrBegin() { return attributes.begin(); }
+		TABLE_API vector<string>::iterator attrEnd() { return attributes.end(); }
 	};
 }
