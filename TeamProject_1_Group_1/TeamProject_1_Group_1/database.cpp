@@ -5,6 +5,7 @@
 /*-------------------------------------------------------------------------------------------------------*/
 /* INCLUDES */
 
+#include <iostream>
 #include <vector>
 #include <string>
 #include "record.h"
@@ -60,7 +61,7 @@ vector<TABLE::Table> Database::getTables() {
 }
 
 
-// HELPER FUNCTION FOR Query
+// HELPER FUNCTIONS FOR Query
 vector<string> separateAtApostrophe(string input) {
 	vector<string> output;
 	int index1;
@@ -84,26 +85,91 @@ vector<string> separateAtApostrophe(string input) {
 	return output;
 }
 
+bool checkWhere(string test, string WHERE) {
+
+
+	return true;
+}
+
 // SELECT input format: "'FirstArg' 'Second ARG' [...] 'Last arg'" 
 // Comma deliminated
 TABLE::Table Database::Query(string SELECT, string FROM, string WHERE){
+	TABLE::Table nullTable;
 	TABLE::Table newTable;
+	RECORD::Record newRecord;
+	RECORD::Record temp;
+	TABLE::Table searchTable;
+	bool found = false;
 	vector<string> selectArgs;
-	for (int i = 0; i < SELECT.size(); i++)
-	{
-
-		if (SELECT.size() == 1 && SELECT == "*")
-		{
-			//add all attribute names to table
+	vector<string>::iterator attrItr;
+	vector<int> attributeIndexes;
+	int j = 0;
+	typedef vector<RECORD::Record>::iterator recordItr;
+	recordItr recordIterator;
+	int recordIndex;
+	
+	for (int i = 0; i < data.size(); i++) {
+		if (data.at(i).returnKey() == FROM) {
+			searchTable = data.at(i);
+			found = true;
+			break;
 		}
-		else
-		{
-			selectArgs = separateAtApostrophe(SELECT);
-		}
-
 	}
 
+	if (!found) {
+		std::cout << "EROOR: Table not found. \n";
+		return nullTable;
+	}
+	
+	else {
+		if (SELECT.size() == 1 && SELECT == "*") {
+			selectArgs = searchTable.getAttributes();
+		}
 
+		else if (SELECT.size() == 1 && SELECT != "*") {
+			cout << "ERROR: Invalid SELECT statement. \n";
+			return nullTable;
+		}
+		else {
+			selectArgs = separateAtApostrophe(SELECT);
+		}
+		for (int k = 0; k < selectArgs.size(); k++) {
+			newTable.addAttribute(selectArgs.at(k));
+		}
+		attrItr = searchTable.attrBegin();
+		while (attrItr != searchTable.attrEnd()) {
+			if (*attrItr == selectArgs.at(j)) {
+				attributeIndexes.push_back(j);
+			}
+			j++;
+			attrItr++;
+		}
+		recordIterator = searchTable.begin();
+		while (recordIterator != searchTable.end()) {
+			
+			recordIndex = 0;
+			for (int t = 0; t < attributeIndexes.size(); t++) {
+				temp.set(recordIndex, recordIterator->at(attributeIndexes.at(t)));
+				recordIndex++;
+			}
+
+			RECORD::Record newRec(temp.size());
+			// CHECK WITH WHERE
+			for (int x = 0; x < temp.size(); x++) {
+				if (checkWhere(temp.at(x), WHERE)) {
+					newRec.set(x, temp.at(x));
+				}
+			}
+
+			newTable.insert(newRec);
+
+			for (int s = (temp.size() - 1); s >= 0; s++) {
+				temp.erase(s);
+				newRec.erase(s);
+			}
+			recordIterator++;
+		}
+	}
 
 	return newTable;
 }
