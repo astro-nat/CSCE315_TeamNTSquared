@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-#include "Database.h"
+#include "database.h"
+#include "record.h"
+#include "table.h"
 
 //try { /* */ } catch (...) { /* */ }
 int main(){
@@ -139,4 +141,8 @@ try {
 catch(...) {
 	cout << "Program error\n";
 }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 77b35be2306950a5241579a3311f2b554f5adf49
