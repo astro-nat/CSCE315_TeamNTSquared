@@ -5,20 +5,13 @@
 /*-------------------------------------------------------------------------------------------------------*/
 /* INCLUDES */
 
-#include <cstdlib>
-#include <cstdio>
-#include <stdio.h>
 #include <iostream>
 #include <vector>
 #include <string>
-#include "parser.h"
 #include "record.h"
 #include "table.h"
 #include "database.h"
-
 using namespace DATABASE;
-
-
 /*-------------------------------------------------------------------------------------------------------*/
 
 /*-------------------------------------------------------------------------------------------------------*/
@@ -92,27 +85,12 @@ vector<string> separateAtApostrophe(string input) {
 	return output;
 }
 
+
+
+// CHECK WHERE
 bool checkWhere(string test, string WHERE) {
-
-	// use parser here
-	Parser parser;
-	const char* store[] = { test.c_str() };
-	parser.parse(*store);
-
-	if (strcmp(*store, "") != 0)
-	{
-		try
-		{
-			// evaluate the expression
-			char* result;
-			result = parser.parse(*store);
-			printf("\t%s\n", result);
-		}
-		catch (...)
-		{
-			printf("\tError: Unknown error occured in parser\n");
-		}
-	}
+	
+	
 
 	return true;
 }
