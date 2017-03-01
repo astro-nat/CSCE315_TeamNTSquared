@@ -50,9 +50,6 @@
     <ClCompile Include="database.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Testcode.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="error.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

@@ -170,7 +170,6 @@
     <ClCompile Include="parser.cpp" />
     <ClCompile Include="record.cpp" />
     <ClCompile Include="table.cpp" />
-    <ClCompile Include="Testcode.cpp" />
     <ClCompile Include="variablelist.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
