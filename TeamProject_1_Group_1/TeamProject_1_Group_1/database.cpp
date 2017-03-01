@@ -89,8 +89,11 @@ vector<string> separateAtApostrophe(string input) {
 
 // CHECK WHERE
 bool checkWhere(string test, string WHERE) {
-	
-	
+
+	Parser parser;
+	const char* store = { test.c_str() };
+
+	parser.parse(store);
 
 	return true;
 }

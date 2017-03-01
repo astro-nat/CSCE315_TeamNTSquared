@@ -24,19 +24,19 @@
     <ClInclude Include="database.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="\\tsclient\Disk0\Users\ncluck\Downloads\expression_parser_cpp\constants.h">
+    <ClInclude Include="constants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="\\tsclient\Disk0\Users\ncluck\Downloads\expression_parser_cpp\error.h">
+    <ClInclude Include="error.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="\\tsclient\Disk0\Users\ncluck\Downloads\expression_parser_cpp\functions.h">
+    <ClInclude Include="functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="\\tsclient\Disk0\Users\ncluck\Downloads\expression_parser_cpp\parser.h">
+    <ClInclude Include="parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="\\tsclient\Disk0\Users\ncluck\Downloads\expression_parser_cpp\variablelist.h">
+    <ClInclude Include="variablelist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -53,16 +53,16 @@
     <ClCompile Include="Testcode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="\\tsclient\Disk0\Users\ncluck\Downloads\expression_parser_cpp\error.cpp">
+    <ClCompile Include="error.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="\\tsclient\Disk0\Users\ncluck\Downloads\expression_parser_cpp\functions.cpp">
+    <ClCompile Include="functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="\\tsclient\Disk0\Users\ncluck\Downloads\expression_parser_cpp\parser.cpp">
+    <ClCompile Include="parser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="\\tsclient\Disk0\Users\ncluck\Downloads\expression_parser_cpp\variablelist.cpp">
+    <ClCompile Include="variablelist.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

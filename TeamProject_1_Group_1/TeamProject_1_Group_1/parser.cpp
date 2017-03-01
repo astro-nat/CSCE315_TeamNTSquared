@@ -63,7 +63,7 @@ char* Parser::parse(const char new_expr[])
         }
 
         // initialize all variables
-        strncpy(expr, new_expr, EXPR_LEN_MAX - 1);  // copy the given expression to expr
+        strncpy_s(expr, new_expr, EXPR_LEN_MAX - 1);  // copy the given expression to expr
         e = expr;                                  // let e point to the start of the expression
         ans = 0;
 
@@ -339,7 +339,7 @@ double Parser::parse_level1()
         char* e_now = e;
         TOKENTYPE token_type_now = token_type;
         char token_now[NAME_LEN_MAX+1];
-        strcpy(token_now, token);
+        strcpy_s(token_now, token);
 
         getToken();
         if (strcmp(token, "=") == 0)
@@ -359,7 +359,7 @@ double Parser::parse_level1()
             // go back to previous token
             e = e_now;
             token_type = token_type_now;
-            strcpy(token, token_now);
+            strcpy_s(token, token_now);
         }
     }
 
@@ -524,7 +524,7 @@ double Parser::parse_level9()
 
     if (token_type == FUNCTION)
     {
-        strcpy(fn_name, token);
+        strcpy_s(fn_name, token);
         getToken();
         ans = eval_function(fn_name, parse_level10());
     }
