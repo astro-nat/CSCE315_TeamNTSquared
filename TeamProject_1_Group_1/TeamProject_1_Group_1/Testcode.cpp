@@ -7,9 +7,9 @@
 //try { /* */ } catch (...) { /* */ }
 int main(){
 try {
-	Database db();
+	DATABASE::Database db();
 
-	Record r1(), r2(0), r3(1), r4(100), r5(3);
+	RECORD::Record r1(), r2(0), r3(1), r4(100), r5(3);
 
 	//Put data into records
 	r3.set(0, "test");
@@ -25,9 +25,9 @@ try {
 	init.push_back("name1");init.push_back("name2");init.push_back("name3");
 	
 	//Intitialize tables
-	Table t1();
-	Table t2(init);
-	Table t3(empty);
+	TABLE::Table t1();
+	TABLE::Table t2(init);
+	TABLE::Table t3(empty);
 
 	//Add a table to the Database
 	db.addTable("table2", t2);
