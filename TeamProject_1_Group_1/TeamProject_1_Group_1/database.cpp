@@ -85,8 +85,12 @@ vector<string> separateAtApostrophe(string input) {
 	return output;
 }
 
-bool checkWhere(string test, string WHERE) {
 
+
+// CHECK WHERE
+bool checkWhere(string test, string WHERE) {
+	
+	
 
 	return true;
 }
