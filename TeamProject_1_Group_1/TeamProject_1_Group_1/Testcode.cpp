@@ -136,13 +136,11 @@ try {
 	//query for a table not in the database
 	db.query("*", "TableNotFound", "= new");
 
-	cout << "End of Tests\n";
+	cout << "Passed!\n";
 }
 catch(...) {
 	cout << "Program error\n";
 }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 77b35be2306950a5241579a3311f2b554f5adf49
+
+

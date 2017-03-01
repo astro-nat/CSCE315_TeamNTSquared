@@ -99,7 +99,7 @@ using namespace TABLE;
 	Table Table::crossJoin(Table t1, Table t2) {
 
 		int tableSize = (t1.getAttributes().size() * t2.getAttributes().size());
-		Table joinedTable(0.0, tableSize);
+		Table joinedTable(0, tableSize);
 		
 		for (int i = 0; i < t1.getAttributes().size(); i++) {
 			joinedTable.addAttribute(t1.getAttributes()[i]);

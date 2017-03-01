@@ -162,6 +162,7 @@
     <ClCompile Include="database.cpp" />
     <ClCompile Include="record.cpp" />
     <ClCompile Include="table.cpp" />
+    <ClCompile Include="Testcode.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
