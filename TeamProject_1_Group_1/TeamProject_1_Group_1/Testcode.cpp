@@ -24,17 +24,17 @@ int main() {
 		r5.set(0, "val1");
 		r5.set(1, "val2");
 		r5.set(2, "val3");
-		/* OBSOLETE Test Table doesn't use vectors to construct
+		
 		//Use these to initialize tables
 		vector<string> empty;
 		vector<string> init(3);
 		init.push_back("name1");init.push_back("name2");init.push_back("name3");
-		*/
+		
 
 		//Intitialize tables
 		TABLE::Table t1;
-		TABLE::Table t2("name1", "name2", "name3");
-		TABLE::Table t3;
+		TABLE::Table t2(init);
+		TABLE::Table t3(empty);
 
 		//Add a table to the Database
 		db.addTable("table2", t1);
@@ -152,6 +152,8 @@ int main() {
 					cout << "Error adding attributes\n";
 
 				}
+
+				/*
 				//standard query (should get returned values)
 				TABLE::Table result = db.Query("*", "table1", "> new NOT < test2");
 
@@ -160,6 +162,7 @@ int main() {
 
 				//query for a table not in the database
 				db.Query("*", "TableNotFound", "= new");
+				*/
 
 				std::cout << "Passed!\n";
 			}

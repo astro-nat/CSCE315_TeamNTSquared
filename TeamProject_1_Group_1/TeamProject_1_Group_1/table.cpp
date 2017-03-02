@@ -35,18 +35,11 @@ using namespace TABLE;
 		attributes.clear();
 	}
 
-	Table::Table(char* arg, ...) {
-		char* attrChar;
-		string attribute;
-		int index;
-		va_list args;
-		va_start(args, arg);
-		
-		while ((attrChar = va_arg(args, char*)) != NULL) {
-			attribute = attrChar;
-			attributes.push_back(attribute);
+	Table::Table(vector<string> attr) {
+		for (int i = 0; i < attr.size(); i++) {
+			attributes.push_back(attr.at(i));
 		}
-		va_end(args);
+		tuples.clear;
 		key = "";
 	}
 
