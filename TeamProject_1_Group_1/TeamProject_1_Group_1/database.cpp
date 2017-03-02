@@ -22,7 +22,7 @@ int Database::indexAtName(string name)
 	int index = 0;
 	for (int i = 0; i < data.size(); i++)
 	{
-		if (data.at(i).returnKey() == name)
+		if (listTables()[i] == name)
 		{
 			return index;
 		}
@@ -31,7 +31,7 @@ int Database::indexAtName(string name)
 			index++;
 		}
 	}
-	return index;
+	return 1000000000000;
 }
 
 Database::Database() {
@@ -45,7 +45,12 @@ void Database::addTable(string name, TABLE::Table t1) {
 }
 
 void Database::dropTable(string name) {
-	data.erase((data.begin() + indexAtName(name)) - 1);
+
+	//data.erase(data.begin() + indexAtName(name));
+	if (indexAtName(name) < data.size()) {
+		data.erase((data.begin() + indexAtName(name)));
+	}
+
 }
 
 

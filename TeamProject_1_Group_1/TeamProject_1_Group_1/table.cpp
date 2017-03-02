@@ -39,7 +39,7 @@ using namespace TABLE;
 		for (int i = 0; i < attr.size(); i++) {
 			attributes.push_back(attr.at(i));
 		}
-		tuples.clear;
+		tuples.clear();
 		key = "";
 	}
 
