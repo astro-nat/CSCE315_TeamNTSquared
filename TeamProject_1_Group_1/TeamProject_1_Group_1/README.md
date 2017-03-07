@@ -4,7 +4,9 @@
 
 ### Constructor
 
- > Database();
+''' c++
+Database();
+'''
 
 ### Methods
 
