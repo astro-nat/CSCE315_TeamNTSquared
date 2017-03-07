@@ -1,12 +1,8 @@
 # API Overview
 
-## Database
+## Record
 
 ### Constructor
-
-''' c++
-Database();
-'''
 
 ### Methods
 
@@ -16,8 +12,22 @@ Database();
 
 ### Methods
 
-## Record
+
+
+## Database
+
+### Data Members
+
+Stores vector of Table objects:
+```c++
+vector<TABLE::Table> data;
+```
 
 ### Constructor
+
+Initializes an empty database
+```c++
+Database();
+```
 
 ### Methods
