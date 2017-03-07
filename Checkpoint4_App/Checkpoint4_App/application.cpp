@@ -123,7 +123,7 @@ Table createTableFromJson(char* filename){
 			outTable.insertRecord(outRec);
 			getline(infile, line);
 		}
-
+		infile.close();
 		return outTable;
 	}
 	else {
