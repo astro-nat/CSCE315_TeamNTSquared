@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 
-
+int LINE_COUNT = 1000;
 
 Table createTableFromJson(char* filename);
 
@@ -89,7 +89,8 @@ Table createTableFromJson(char* filename){
 		check = false;
 		bool arrayCheck = false;
 
-		while (!infile.eof()) {
+		int lines = 1;
+		while (lines <= LINE_COUNT) {
 			int recIndex = 0;
 			for (int i = 0; i < line.size(); i++) {
 				if (line[i] == '"' && line[i - 1] == ':') {
@@ -118,6 +119,7 @@ Table createTableFromJson(char* filename){
 
 				}
 			}
+			lines++;
 			outTable.insertRecord(outRec);
 			getline(infile, line);
 		}
