@@ -47,14 +47,14 @@ vector<string> attributes;
 
 Stores all records in table:
 ```c++
-vector<Record::Record> tuples;
+vector<RECORD::Record> tuples;
 ```
 
 ### Constructor
 
 Initializes an empty table with 0 rows and 0 columns:
 ```c++
-Table(int rows = 0, int columsn = 0;
+Table(int rows = 0, int columns = 0;
 ```
 
 Initializes a table with given attributes:
@@ -64,7 +64,66 @@ Table(vector<string> attr);
 
 ### Methods
 
+Adds attribute (column) to table:
+```c++
+void addAttribute(string attributeName);
+```
 
+Deletes attribute (column) from table:
+```c++
+void deleteAttributes(string attributeName);
+```
+
+Inserts new record into table:
+```c++
+void insert(RECORD::Record newRow);
+```
+
+Gets attributes by returning attribute names:
+```c++
+vector<string> getAttributes();
+```
+
+Returns size of table, or number of rows:
+```c++
+int size();
+```
+
+Specifies table's key:
+```c++
+void specifyKey(string attributeKey);
+```
+
+Returns table key:
+```c++
+string returnKey();
+```
+
+Cross joins two tables and returns new table:
+```c++
+Table crossJoin(Table t1, Table t2);
+```
+
+Natural joins two tables and returns new table:
+```c++
+Table naturalJoin(Table t1, Table t2);
+```
+
+Returns number of non-empty elements in attribute:
+```c++
+int count(string attributeName);
+```
+
+Returns maximum value in attribute:
+```c++
+int max(string attributeName);
+```
+
+Returns minimum value in attribute:
+```c++
+int min(string attributeName);
+```
+    
 ## Database Class
 
 ### Data Members
@@ -105,7 +164,7 @@ vector<string> listTables();
 
 Returns a table object resulting from given query:
 ```c++
-Table Query(string SELECT, string FROM, string WHERE);
+TABLE::Table Query(string SELECT, string FROM, string WHERE);
 ```
 
 Returns index of table with given name:
