@@ -71,7 +71,7 @@ int main() {
 
 	Database db;
 
-	db.addTable(table1,keys.at(0));
+	db.addTable(table1, keys.at(0));
 	db.addTable(table2, keys.at(1));
 	db.addTable(table3, keys.at(2));
 	db.addTable(table4, keys.at(3));
@@ -81,9 +81,10 @@ int main() {
 
 	Table queryTable;
 	Table queryTable2;
+	Table queryTable3;
 
 	Table joinTable;
-
+	Table joinTable2;
 	//queryTable = db.query( "user_id, name, review_count", keys.at(4), "name > \"\"");
 
 	//printTable(queryTable);
@@ -93,11 +94,16 @@ int main() {
 	string name;
 	string whereName;
 
+	string bus_name;
+
 	while (!quit) {
 		cout << "Select an action: \n";
 		cout << "	1: Get information on a user\n";
 		cout << "	2: Get information on a business\n";
 		cout << "	3: Combine information.\n";
+		cout << "   4: Get summary information of a user.\n";
+		cout << "   5: Get summary information on a business.\n";
+		cout << "   6: Get active users (high review count\n)";
 		cout << "	0: Quit\n";
 		cout << "Enter your number: ";
 		int selection;
@@ -119,10 +125,28 @@ int main() {
 			printTable(queryTable);
 			break;
 		case 3:
-			
+			cout << "Enter the name of a user whose reviews you would like to know about: ";
+			cin >> name;
+			whereName = "name = \"" + name + "\"";
+			queryTable = db.query("user_id, name, review_count", keys.at(4), whereName); //table 1 = user_id, name, review count
+																						 //queryTable2 = db.query("user_id, stars, text", keys.at(2),  );
 			break;
+		case 4:
+			cout << "Enter the name of a user who you would like to see the summary for";
+			cin >> name;
+			whereName = "name = \"" + name + "\"";
+			queryTable = db.query("user_id, name, review_count, average_stars", keys.at(4), whereName);
+			printTable(queryTable);
+		case 5:
+			cout << "Enter the name of a business you'd like to see the summary for: ";
+			cin >> name;
+			whereName = "name = \"" + name + "\"";
+			queryTable = db.query("business_id, name, city, state, stars", keys.at(0), whereName);
+			printTable(queryTable);
+		case 6:
+			//queryTable = db.query("name", keys.at(4), review_count > 10 ); //how to compare it?
 		case 0:
-			quit = true; 
+			quit = true;
 			break;
 		default:
 			cout << "Improper selection. Try again \n";
@@ -166,7 +190,7 @@ void printRecord(Record printRecord) {
 }
 
 // Creates new table from JSON file
-Table createTableFromJson(char* filename){
+Table createTableFromJson(char* filename) {
 
 	ifstream infile;
 	infile.open(filename);
@@ -178,7 +202,7 @@ Table createTableFromJson(char* filename){
 
 	if (infile) {
 		getline(infile, line);
-		cout << line.substr(0,1000) << "\n";
+		//cout << line.substr(0,1000) << "\n";
 		int index;
 		int size;
 		bool check = true;
@@ -209,7 +233,7 @@ Table createTableFromJson(char* filename){
 		}
 
 
-		Record outRec(outTable.getAttributes().size()*2);
+		Record outRec(outTable.getAttributes().size() * 2);
 
 
 		string recData;
@@ -229,7 +253,7 @@ Table createTableFromJson(char* filename){
 			// Parses through JSON file to collect data and create record
 
 			for (int i = 0; i < line.size(); i++) {
-				
+
 				if (line[i] == '"' && line[i - 1] == ':') {
 					index = i + 1;
 					endChar = '"';
@@ -265,7 +289,7 @@ Table createTableFromJson(char* filename){
 			}
 
 			lines++;
-			
+
 			// Inserts new record into table
 			outTable.insertRecord(outRec);
 
