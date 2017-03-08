@@ -14,8 +14,13 @@ void printRecord(Record printRecord);
 void printAttributes(Table printTable);
 
 int main() {
+
 	// File Input and Table Creation
 	cout << "Reading files . . . \n";
+
+
+	// File Input and Table Creation //
+
 	char * jsonIn1 = "yelp_academic_dataset_business.json";
 	Table table1(createTableFromJson(jsonIn1));
 
@@ -31,12 +36,15 @@ int main() {
 	char * jsonIn5 = "yelp_academic_dataset_user.json";
 	Table table5(createTableFromJson(jsonIn5));
 
+
 	cout << "Tables have been loaded \n";
 
 	// Specify Keys
+
 	vector<string> attributes;
 	vector<string> keys;
 
+	// Sets attributes and adds to keys //
 	attributes = table1.getAttributes();
 	table1.setAttributeAsKey(attributes.at(0));
 	keys.push_back(attributes.at(0));
@@ -153,7 +161,9 @@ void printRecord(Record printRecord) {
 	cout << "\n";
 }
 
+// Creates new table from JSON file
 Table createTableFromJson(char* filename){
+
 	ifstream infile;
 	infile.open(filename);
 
@@ -194,7 +204,10 @@ Table createTableFromJson(char* filename){
 			}
 		}
 
+
 		Record outRec(outTable.getAttributes().size()*2);
+
+
 		string recData;
 		check = false;
 		arrayCheck = false;
@@ -202,8 +215,15 @@ Table createTableFromJson(char* filename){
 		int recIndex = 0;
 
 		int lines = 1;
+
+		// Limit lines to LINE_COUNT value to prevent crash
 		while (lines <= LINE_COUNT) {
+
 			recIndex = 0;
+
+
+			// Parses through JSON file to collect data and create record
+
 			for (int i = 0; i < line.size(); i++) {
 				
 				if (line[i] == '"' && line[i - 1] == ':') {
@@ -239,8 +259,12 @@ Table createTableFromJson(char* filename){
 
 				}
 			}
+
 			lines++;
+			
+			// Inserts new record into table
 			outTable.insertRecord(outRec);
+
 			getline(infile, line);
 		}
 		infile.close();
