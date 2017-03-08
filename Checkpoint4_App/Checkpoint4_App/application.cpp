@@ -83,7 +83,7 @@ int main() {
 	Table queryTable2;
 
 	Table joinTable;
-
+	Table joinTable2;
 	//queryTable = db.query( "user_id, name, review_count", keys.at(4), "name > \"\"");
 
 	//printTable(queryTable);
@@ -92,6 +92,8 @@ int main() {
 	bool quit = false;
 	string name;
 	string whereName;
+
+	string bus_name;
 
 	while (!quit) {
 		cout << "Select an action: \n";
@@ -119,7 +121,20 @@ int main() {
 			printTable(queryTable);
 			break;
 		case 3:
-			
+			cout << "Enter the name of a user and a business you want to know about: ";
+			cin >> name;
+			cin >> bus_name;
+			whereName = "name = \"" + name + "\"";
+			bus_name = "name = \"" + bus_name + "\"";
+			//queryTable = db.query("user_id, name", keys.at(4), whereName);
+			//queryTable2 = db.query("business_id, user_id, stars, text", keys.at(1), "user_id > \"\"");
+			//queryTable = db.query("user_id, name", keys.at(4), whereName);
+			//queryTable2 = db.query("business_id, bus_name, stars, text", )
+			joinTable = Table::crossJoin(queryTable, queryTable2);
+			queryTable = db.query("business_id, name", keys.at(0), bus_name);
+			joinTable2 = Table::crossJoin(joinTable, queryTable);
+
+			printTable(joinTable2);
 			break;
 		case 0:
 			quit = true; 
@@ -178,7 +193,7 @@ Table createTableFromJson(char* filename){
 
 	if (infile) {
 		getline(infile, line);
-		cout << line.substr(0,1000) << "\n";
+		//cout << line.substr(0,1000) << "\n";
 		int index;
 		int size;
 		bool check = true;
