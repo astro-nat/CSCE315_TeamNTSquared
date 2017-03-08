@@ -129,7 +129,7 @@ int main() {
 			cin >> name;
 			whereName = "name = \"" + name + "\"";
 			queryTable = db.query("user_id, name, review_count", keys.at(4), whereName); //table 1 = user_id, name, review count
-																						 //queryTable2 = db.query("user_id, stars, text", keys.at(2),  );
+		    //queryTable2 = db.query("user_id, stars, text", keys.at(2),  );			
 			break;
 		case 4:
 			cout << "Enter the name of a user who you would like to see the summary for";
