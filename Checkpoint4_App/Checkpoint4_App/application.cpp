@@ -80,6 +80,9 @@ int main() {
 	cout << "Database created.\n";
 
 	Table queryTable;
+	Table queryTable2;
+
+	Table joinTable;
 
 	//queryTable = db.query( "user_id, name, review_count", keys.at(4), "name > \"\"");
 
@@ -116,6 +119,7 @@ int main() {
 			printTable(queryTable);
 			break;
 		case 3:
+			
 			break;
 		case 0:
 			quit = true; 
@@ -174,7 +178,7 @@ Table createTableFromJson(char* filename){
 
 	if (infile) {
 		getline(infile, line);
-		//cout << line << "\n";
+		cout << line.substr(0,1000) << "\n";
 		int index;
 		int size;
 		bool check = true;
