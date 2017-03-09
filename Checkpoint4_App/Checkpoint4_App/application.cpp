@@ -18,9 +18,6 @@ int main() {
 	// File Input and Table Creation
 	cout << "Reading files . . . \n";
 
-
-	// File Input and Table Creation //
-
 	char * jsonIn1 = "yelp_academic_dataset_business.json";
 	Table table1(createTableFromJson(jsonIn1));
 
@@ -93,6 +90,8 @@ int main() {
 	bool quit = false;
 	string name;
 	string whereName;
+	string id_to_look;
+	string whereID;
 
 	string bus_name;
 
@@ -128,8 +127,14 @@ int main() {
 			cout << "Enter the name of a user whose reviews you would like to know about: ";
 			cin >> name;
 			whereName = "name = \"" + name + "\"";
-			queryTable = db.query("user_id, name, review_count", keys.at(4), whereName); //table 1 = user_id, name, review count
-		    //queryTable2 = db.query("user_id, stars, text", keys.at(2),  );			
+			queryTable = db.query("user_id, name, review_count", keys.at(4), whereName); // first table used just to get user_id on a table
+			
+			id_to_look = queryTable.records[0][1]; 
+			whereID = "business_id = \"" + id_to_look + "\""; // query to get the user id;
+
+			queryTable2 = db.query("user_id, stars, text", keys.at(2), whereID);
+			printTable(queryTable2);
+				
 			break;
 		case 4:
 			cout << "Enter the name of a user who you would like to see the summary for";
@@ -138,12 +143,15 @@ int main() {
 			queryTable = db.query("user_id, name, review_count, average_stars", keys.at(4), whereName);
 			printTable(queryTable);
 		case 5:
-			cout << "Enter the name of a business you'd like to see the summary for: ";
+			cout << "Enter the name of a business you would like to see the summary for: ";
 			cin >> name;
 			whereName = "name = \"" + name + "\"";
 			queryTable = db.query("business_id, name, city, state, stars", keys.at(0), whereName);
 			printTable(queryTable);
 		case 6:
+
+
+
 			//queryTable = db.query("name", keys.at(4), review_count > 10 ); //how to compare it?
 		case 0:
 			quit = true;
