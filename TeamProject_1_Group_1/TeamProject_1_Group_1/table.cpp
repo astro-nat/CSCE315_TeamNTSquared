@@ -18,12 +18,15 @@ using namespace TABLE;
 /* FUNCION DEFINITIONS FOR CLASS: TABLE */
 
 /*
+	// Initializes empty table
 	Table::Table() {
 		tuples.clear();
 		attributes.clear();
 		key = "";
 	}
 */
+
+	// Initializes empty table with specified number of rows and columns
 	Table::Table(int rows, int columns) {
 		attributes.clear();
 		tuples.clear();
@@ -35,6 +38,7 @@ using namespace TABLE;
 		attributes.clear();
 	}
 
+	// Initializes empty table with given attributes/columns
 	Table::Table(vector<string> attr) {
 		for (int i = 0; i < attr.size(); i++) {
 			attributes.push_back(attr.at(i));
@@ -43,17 +47,25 @@ using namespace TABLE;
 		key = "";
 	}
 
+	// Adds attribute to table
 	void Table::addAttribute(string attributeName) {
+
 		attributes.push_back(attributeName);
 		int index = attributes.size() - 1;
+
+		// Each value in attribute is initialized to "NULL"
 		for (int i = 0; i < tuples.size(); i++) {
 			tuples.at(i).set(index, "NULL");
 		}
 	}
 
+	// Deletes attributes, or column, from table
 	void Table::deleteAttribute(string attributeName) {
+
 		bool check = false;
 		int index = 0;
+
+		// Searches for attribute with matching name. If found, erase the attribute name
 		for (int i = 0; i < attributes.size(); i++) {
 			if (attributes.at(i) == attributeName) {
 				attributes.erase(attributes.begin() + i);
@@ -62,57 +74,80 @@ using namespace TABLE;
 				break;
 			}
 		}
+
+		// If attribute not found, print message
 		if (check == false) {
 			cout << "Unable to find the attribute to be deleted." << endl;
 		}
+
+		// If attribute was found, erase all records at given attribute index
 		else {
 			for (int j = 0; j < tuples.size(); j++) {
 				tuples.at(j).erase(index);
 			}
 		}
 	}
+
+	// Inset new record
 	void Table::insert(RECORD::Record newRow) {
 		tuples.push_back(newRow);
 	}
+
+	// Returns attribute/column names
 	vector<string> Table::getAttributes() {
 		return attributes;
 	}
+
+	// Returns number of rows
 	int Table::size() {
 		return tuples.size();
 	}
 
+	// Specifies new table key
 	void Table::specifyKey(string attributeKey) {
 		key = attributeKey;
 	}
 
+	// Returns table key
 	string Table::returnKey() {
 		return key;
 	}
 
+	// Cross joins two tables
 	Table Table::crossJoin(Table t1, Table t2) {
 
+		// Multiples sizes of two tables and creates new table, because final size of cross joined table is always size(t1)*size(t2)
 		int tableSize = (t1.getAttributes().size() * t2.getAttributes().size());
-		Table joinedTable(0, tableSize);
+		Table joinedTable(0, 0);
 		
+		// Adds attributes from first table to new table
 		for (int i = 0; i < t1.getAttributes().size(); i++) {
 			joinedTable.addAttribute(t1.getAttributes()[i]);
 		}
+		// Appends attributes from second table to new table
 		for (int j = 0; j < t2.getAttributes().size(); j++) {
 			joinedTable.addAttribute(t2.getAttributes()[j]);
 		}
-
+		
+		// Adds all rows to new table
 		for (int i = 0; i < t1.size(); i++) {
 			for (int j = 0; j < t2.size(); j++) {
 
 				for (int k = 0; k < tableSize; k++) {
+
+					// Create new record
 					RECORD::Record newRecord(tableSize);
+
+					// Sets new record value equal to record in table 1
 					for (int m = 0; m < t1.size(); m++) {
 						newRecord.set(k, t1.tuples[i].at(m));
 					}
+					// Appends record value from table 2 to new record
 					for (int n = 0; n < t2.size(); n++) {
 						newRecord.set(k, t2.tuples[i].at(n));
 					}
 
+					// Adds new record to new table
 					joinedTable.tuples.push_back(newRecord);
 				}
 			}

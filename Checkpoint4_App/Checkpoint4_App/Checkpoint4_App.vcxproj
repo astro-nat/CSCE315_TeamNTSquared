@@ -74,6 +74,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <LibraryPath>\\tsclient\N\TAMU\CSCE315\CSCE315_TeamProjects\CSCE315_TeamNTSquared\Checkpoint4_App\Checkpoint4_App;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -106,13 +107,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\t_lamkin\Documents\Visual Studio 2015\Projects\CSCE315_TeamNTSquared\Checkpoint4_App\Checkpoint4_App;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>\\tsclient\N\TAMU\CSCE315\CSCE315_TeamProjects\CSCE315_TeamNTSquared\Checkpoint4_App\Checkpoint4_App;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>ServerDLL.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\t_lamkin\Documents\Visual Studio 2015\Projects\CSCE315_TeamNTSquared\Checkpoint4_App\Checkpoint4_App;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>\\tsclient\N\TAMU\CSCE315\CSCE315_TeamProjects\CSCE315_TeamNTSquared\Checkpoint4_App\Checkpoint4_App;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
