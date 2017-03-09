@@ -7,10 +7,10 @@ Team Members:
  Tyler Lamkin  
  Tim Tran  
 
-For API Overview:
+For API Files and Documentation:
 
-https://github.com/astro-nat/CSCE315_TeamNTSquared/blob/master/TeamProject_1_Group_1/TeamProject_1_Group_1/README.md
+https://github.com/astro-nat/CSCE315_TeamNTSquared/blob/master/TeamProject_1_Group_1/TeamProject_1_Group_1/
 
-For How the Application Works:
+For Application Files and Documentation:
 
-https://github.com/astro-nat/CSCE315_TeamNTSquared/blob/master/Checkpoint4_App/Checkpoint4_App/README.md
+https://github.com/astro-nat/CSCE315_TeamNTSquared/blob/master/Checkpoint4_App/Checkpoint4_App/
