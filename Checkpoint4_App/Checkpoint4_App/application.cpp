@@ -88,7 +88,7 @@ int main() {
 	//queryTable = db.query( "user_id, name, review_count", keys.at(4), "name > \"\"");
 
 	//printTable(queryTable);
-	printAttributes(table1);
+	//printAttributes(table1);
 	//printRecord(table5[0]);
 	bool quit = false;
 	string name;
@@ -104,18 +104,21 @@ int main() {
 		cout << "	1: Get information on a user\n";
 		cout << "	2: Get information on a business\n";
 		cout << "	3: Get reviews from a user.\n";
-		cout << "   4: Get summary information of a user.\n";
-		cout << "   5: Get summary information on a business.\n";
-		cout << "   6: Get average rating for a business"; 
-		cout << "   7: Get reviews from a business.\n";
-		cout << "   8: Get number of compliments for a user.\n";
-		cout << "   9  Get tips from a particular user.\n";
+		//cout << "	4: Get summary information of a user.\n";
+		cout << "	5: Get summary information on a business.\n";
+		//cout << "	6: Get average rating for a business"; //
+		cout << "	7: Get reviews from a business.\n";
+		cout << "	8: Get number of compliments for a user.\n";
+		//cout << "	9: Get tips from a particular user.\n"; //
 		cout << "	0: Quit\n";
 		cout << "Enter your number: ";
 
 		int selection;
 		cin >> selection;
 
+		int sum = 0;
+		int to_string;
+		double average_rating;
 		switch (selection) {
 		case 1:
 			cout << "Enter the name of the user you want to know about: ";
@@ -141,6 +144,7 @@ int main() {
 			queryTable2 = db.query("user_id, stars, text", keys.at(2), whereID);
 			printTable(queryTable2);
 			break;
+			/*
 		case 4:
 			cout << "Enter the name of a user who you would like to see the summary for";
 			cin >> name;
@@ -148,6 +152,7 @@ int main() {
 			queryTable = db.query("user_id, name, review_count, average_stars", keys.at(4), whereName);
 			printTable(queryTable);
 			break;
+			*/
 		case 5:
 			cout << "Enter the name of a business you'd like to see the summary for: ";
 			cin >> name;
@@ -155,6 +160,7 @@ int main() {
 			queryTable = db.query("business_id, name, city, state, stars", keys.at(0), whereName);
 			printTable(queryTable);
 			break;
+			/*
 		case 6:
 			cout << "Enter the name of a business you'd like to see the average rating for: ";
 			cin >> name;
@@ -164,9 +170,7 @@ int main() {
 			whereID = "business_id = \"" + id_to_look + "\"";
 			queryTable2 = db.query("stars", keys.at(2), whereID); //store stars in a table
 
-			int sum = 0;
-			int to_string;
-			double average_rating;
+			sum = 0;
 
 			for (int i = 0; i < sizeof(Table::records); i++)
 			{
@@ -187,7 +191,7 @@ int main() {
 				cout << "Since the average rating was lower than a 4, we're NOT recommending this business";
 			}
 			break;
-
+			*/
 		case 7:
 			cout << "Enter the name of a business whose reviews you'd like to see";
 			cin >> name;
@@ -204,6 +208,7 @@ int main() {
 			queryTable = db.query("name, compliment_hot, compliment_more, compliment_cool, compliment_funny", keys.at(4), whereName);
 			printTable(queryTable);
 			break;
+			/*
 		case 9:
 			cout << "Enter the name of a user who you would like to read the tips they have: ";
 			cin >> name;
@@ -214,6 +219,7 @@ int main() {
 			queryTable2 = db.query("text, date", keys.at(3), whereID);
 			printTable(queryTable2);
 			break;
+			*/
 		case 0:
 			quit = true; 
 			break;
